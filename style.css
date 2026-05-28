@@ -8,28 +8,87 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
 
-<div class="box">
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9eef5, #f8f9fb);
+}
 
-    <h2>📸 Enviar Fotos</h2>
+/* CARD PRINCIPAL */
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 95%;
+    max-width: 420px;
+}
 
-    <input type="file" id="file" accept="image/*">
-    <br>
+/* INPUT */
+input {
+    margin: 15px 0;
+    width: 100%;
+    font-size: 16px;
+}
 
-    <button onclick="uploadImage()">Enviar Foto</button>
-    <button onclick="openAdmin()">🔐 Admin</button>
+/* BOTÕES GRANDES PRA CELULAR */
+button {
+    background: #0070f3;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 6px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
 
-    <button id="clearBtn" style="display:none" onclick="clearGallery()">🗑️ Limpar Galeria</button>
+button:hover {
+    background: #0059c9;
+    transform: scale(1.02);
+}
 
-    <button id="downloadBtn" style="display:none" onclick="downloadAll()">⬇️ Baixar Todas</button>
+/* MENSAGEM */
+#msg {
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 15px;
+}
 
-    <div id="msg"></div>
-</div>
+/* GALERIA MAIS MODERNA */
+#gallery {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+}
 
-<div id="gallery"></div>
+#gallery img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-<script src="script.js"></script>
+/* RESPONSIVO MAIS FORTE */
+@media (max-width: 480px) {
+    #gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-</body>
-</html>
+    button {
+        font-size: 15px;
+        padding: 16px;
+    }
+}
