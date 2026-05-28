@@ -4,8 +4,31 @@
 // ======================
 window.onload = function () {
     loadGallery();
+    checkAdmin();
 };
 
+function checkAdmin() {
+
+    const params = new URLSearchParams(window.location.search);
+    const isAdmin = params.get("admin");
+
+    if (isAdmin === "true") {
+
+        const user = prompt("Login:");
+        const pass = prompt("Senha:");
+
+        if (user === "admin" && pass === "admin") {
+
+            document.getElementById("clearBtn").style.display = "inline-block";
+            document.getElementById("downloadBtn").style.display = "inline-block";
+
+            alert("Modo admin ativado");
+
+        } else {
+            alert("Acesso negado");
+        }
+    }
+}
 // ======================
 // UPLOAD IMGBB
 // ======================
