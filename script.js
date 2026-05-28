@@ -135,8 +135,8 @@ function openAdmin() {
     const params = new URLSearchParams(window.location.search);
     const isAdmin = params.get("admin");
 
+    // se não tiver URL secreta, não faz nada
     if (isAdmin !== "true") {
-        alert("Acesso negado");
         return;
     }
 
