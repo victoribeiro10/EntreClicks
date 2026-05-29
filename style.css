@@ -1,94 +1,162 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema de Fotos</title>
-
-<link rel="stylesheet" href="style.css">
-</head>
-
-
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    margin: 0;
     padding: 20px;
-    background: linear-gradient(135deg, #e9eef5, #f8f9fb);
+    font-family: Arial, sans-serif;
+    background: #f8f5f2;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* CARD PRINCIPAL */
+/* FUNDOS DECORATIVOS */
+.bg-top {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: #f1d8cf;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.bg-bottom {
+    position: fixed;
+    bottom: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    background: #e7c2b4;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* LOGO */
+.logo-area {
+    margin-top: 20px;
+}
+
+.logo {
+    width: 220px;
+    max-width: 80%;
+}
+
+.logo-area h1 {
+    color: #c97c63;
+    margin-bottom: 5px;
+    font-size: 42px;
+}
+
+.logo-area p {
+    color: #9b8b72;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* CARD */
 .box {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    display: inline-block;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 95%;
-    max-width: 420px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    margin: 30px auto;
+    padding: 30px 20px;
+    border-radius: 24px;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* TITULOS */
+.box h2 {
+    color: #c97c63;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.box span {
+    color: #777;
+    display: block;
+    margin-bottom: 25px;
 }
 
 /* INPUT */
-input {
-    margin: 15px 0;
+input[type="file"] {
+    margin-bottom: 20px;
     width: 100%;
-    font-size: 16px;
+    color: #777;
 }
 
-/* BOTÕES GRANDES PRA CELULAR */
+/* BOTÕES */
 button {
-    background: #0070f3;
+    background: linear-gradient(135deg, #d98c73, #c97c63);
     color: white;
     border: none;
-    padding: 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 6px 0;
+    padding: 16px;
     width: 100%;
+    border-radius: 14px;
     font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
     transition: 0.2s;
 }
 
 button:hover {
-    background: #0059c9;
     transform: scale(1.02);
+    opacity: 0.95;
 }
 
 /* MENSAGEM */
 #msg {
-    margin-top: 12px;
+    margin-top: 20px;
     font-weight: bold;
-    font-size: 15px;
+    color: #6f6f6f;
 }
 
-/* GALERIA MAIS MODERNA */
+/* TITULO GALERIA */
+.gallery-title h3 {
+    color: #c97c63;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+/* GALERIA */
 #gallery {
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 500px;
+    gap: 12px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 #gallery img {
     width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
+    border-radius: 18px;
     aspect-ratio: 1 / 1;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    transition: 0.2s;
 }
 
-/* RESPONSIVO MAIS FORTE */
-@media (max-width: 480px) {
+#gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    color: #9b8b72;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+/* RESPONSIVO */
+@media (min-width: 700px) {
+
     #gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    button {
-        font-size: 15px;
-        padding: 16px;
-    }
 }
