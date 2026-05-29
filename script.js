@@ -23,6 +23,8 @@ function checkAdmin() {
 
         document.getElementById("downloadBtn").style.display = "block";
 
+        document.getElementById("gallery").style.display = "grid";
+
     } else {
 
         alert("Acesso negado");
