@@ -1,39 +1,63 @@
 ﻿```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema de Fotos</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntreClicks</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="box">
+    <!-- LOGO -->
+    <div class="logo-area">
+        <img src="logo.png" alt="EntreClicks" class="logo">
+    </div>
 
-    <h2>📸 Enviar Fotos</h2>
+    <!-- BOX -->
+    <div class="box">
 
-    <input type="file" id="file" accept="image/*">
-    <br>
+        <h2>📸 Envie sua foto</h2>
 
-    <button onclick="uploadImage()">Enviar Foto</button>
+        <p>
+            Compartilhe seus melhores momentos 💖
+        </p>
 
-    <button id="clearBtn" style="display:none" onclick="clearGallery()">
-        🗑️ Limpar Galeria
-    </button>
+        <input type="file" id="file" accept="image/*">
 
-    <button id="downloadBtn" style="display:none" onclick="downloadAll()">
-        ⬇️ Baixar Todas
-    </button>
+        <button onclick="uploadImage()">
+            Enviar Foto
+        </button>
 
-    <div id="msg"></div>
-</div>
+        <button
+            id="clearBtn"
+            style="display:none"
+            onclick="clearGallery()">
 
-<div id="gallery"></div>
+            🗑️ Limpar Galeria
 
-<script src="script.js"></script>
+        </button>
+
+        <button
+            id="downloadBtn"
+            style="display:none"
+            onclick="downloadAll()">
+
+            ⬇️ Baixar Todas
+
+        </button>
+
+        <div id="msg"></div>
+
+    </div>
+
+    <!-- GALERIA -->
+    <div id="gallery"></div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
