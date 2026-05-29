@@ -48,34 +48,25 @@ function checkAdmin() {
 
 async function uploadImage() {
 
-    const input =
-    document.getElementById("file");
+    const input = document.getElementById("file");
 
     if (!input.files.length) {
-
         alert("Selecione uma foto");
-
         return;
     }
 
-    const file =
-    input.files[0];
+    const file = input.files[0];
 
-    document.getElementById("msg").innerText =
-    "Enviando foto...";
+    document.getElementById("msg").innerText = "Enviando foto...";
 
-    const formData =
-    new FormData();
-
+    const formData = new FormData();
     formData.append("image", file);
 
     try {
 
-        const apiKey =
-        "4ec4f650a2cf5d5bb8b35cf85edc9941";
+        const apiKey = "4ec4f650a2cf5d5bb8b35cf85edc9941";
 
-        const response =
-        await fetch(
+        const response = await fetch(
             `https://api.imgbb.com/1/upload?key=${apiKey}`,
             {
                 method: "POST",
@@ -83,39 +74,32 @@ async function uploadImage() {
             }
         );
 
-        const data =
-        await response.json();
+        const data = await response.json();
 
         if (data.success) {
 
-            const imageUrl =
-            data.data.url;
+            const imageUrl = data.data.url;
 
-            // SALVA ONLINE
+            // SALVA NO SUPABASE
             await supabase
                 .from("photos")
-                .insert([
-                    {
-                        url: imageUrl
-                    }
-                ]);
+                .insert([{ url: imageUrl }]);
 
             addToGallery(imageUrl);
 
             document.getElementById("msg").innerText =
-            "💖 Foto enviada com sucesso!";
+                "💖 Foto enviada com sucesso!";
 
         } else {
-
             document.getElementById("msg").innerText =
-            "Erro no upload";
-
+                "Erro no upload";
         }
 
-    catch (error) {
-    console.log("ERRO COMPLETO:", error);
-    document.getElementById("msg").innerText =
-        "Erro: " + (error?.message || JSON.stringify(error));
+    } catch (error) {
+        console.log("ERRO COMPLETO:", error);
+        document.getElementById("msg").innerText =
+            "Erro: " + (error?.message || JSON.stringify(error));
+    }
 }
 
 // ======================
@@ -241,9 +225,10 @@ async function downloadAll() {
     URL.revokeObjectURL(url);
 
     alert("Download iniciado!");
+
+}
+
 window.uploadImage = uploadImage;
 window.loadGallery = loadGallery;
 window.clearGallery = clearGallery;
 window.downloadAll = downloadAll;
-
-}
