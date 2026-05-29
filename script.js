@@ -7,7 +7,7 @@ const supabaseUrl =
 "https://scwznirvzwrphztvopbz.supabase.co";
 
 const supabaseKey =
-"sb_publishable_QH-jIG52Qp6BC6pG5t_mHQ_YuNmM5Ly";
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjd3puaXJ2endycGh6dHZvcGJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNzI2NzQsImV4cCI6MjA5NTY0ODY3NH0.PLvr547bIEJwjECKxQaoR7lpazs8GbSpLYLMDiGD4Po";
 
 const supabase =
 window.supabase.createClient(
