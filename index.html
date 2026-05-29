@@ -1,35 +1,24 @@
-﻿<!DOCTYPE html>
+﻿```html
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EntreClicks</title>
+<title>Sistema de Fotos</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- FUNDO DECORATIVO -->
-<div class="bg-top"></div>
-<div class="bg-bottom"></div>
-
-<!-- LOGO -->
-<div class="logo-area">
-    <img src="logo.png" alt="EntreClicks Logo" class="logo">
-  </div>
-
-<!-- CARD PRINCIPAL -->
 <div class="box">
 
-    <h2>📸 Envie sua foto</h2>
-    <span>Compartilhe seus melhores momentos!</span>
+    <h2>📸 Enviar Fotos</h2>
 
     <input type="file" id="file" accept="image/*">
+    <br>
 
-   <button onclick="uploadImage()">
-Enviar
-</button>
+    <button onclick="uploadImage()">Enviar Foto</button>
 
     <button id="clearBtn" style="display:none" onclick="clearGallery()">
         🗑️ Limpar Galeria
@@ -40,24 +29,12 @@ Enviar
     </button>
 
     <div id="msg"></div>
-
-</div>
-
-<!-- GALERIA -->
-<div class="gallery-title">
-    <h3>✨ Galeria de Fotos</h3>
 </div>
 
 <div id="gallery"></div>
-
-<!-- FOOTER -->
-<footer>
-    <p>Obrigado por compartilhar 💖</p>
-</footer>
 
 <script src="script.js"></script>
 
 </body>
 </html>
 ```
-
